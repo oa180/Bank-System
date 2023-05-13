@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Banking App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>
+          <a href="home.html" style="text-decoration: none; color: #f2f2f2"
+            >Banking App</a
+          >
+        </h1>
+      </div>
+    </header>
+
+    <nav>
+      <div class="container">
+        <ul>
+          <li>
+            <a href="#" onclick="showViewAllCustomers()">View All Customers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Home page -->
+      <div id="home-page">
+        <p>Please select an option below:</p>
+        <ul>
+          <li>
+            <a href="#" onclick="showViewAllCustomers()">View All Customers</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- View All Customers page -->
+      <div id="view-all-customers" class="hidden">
+        <h2>View All Customers</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populate the customer data dynamically using server-side code -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- View One Customer page -->
+      <div id="view-one-customer" class="hidden">
+        <h2>View Customer</h2>
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td id="customer-name"></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td id="customer-email"></td>
+          </tr>
+          <tr>
+            <td>Balance:</td>
+            <td id="customer-balance"></td>
+          </tr>
+        </table>
+        <p>Please select an option below:</p>
+        <ul>
+          <li><a href="#" onclick="showTransferMoney()">Transfer Money</a></li>
+          <li>
+            <a href="#" onclick="showViewAllCustomers()">View All Customers</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Transfer Money page -->
+      <div id="transfer-money" class="hidden">
+        <h2>Transfer Money</h2>
+        <p>Transfer from:</p>
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td id="sender-name"></td>
+          </tr>
+          <tr>
+            <td>Balance:</td>
+            <td id="sender-balance"></td>
+          </tr>
+        </table>
+        <p>Select a customer to transfer to:</p>
+        <table id="send-to">
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Balance</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populate the customer data dynamically using server-side code -->
+          </tbody>
+        </table>
+
+        <form id="transfer-form">
+          <input
+            type="text"
+            name="sender-id"
+            id="sender-id"
+            value=""
+            class="form-input"
+          />
+          <label for="sender-id"></label>
+
+          <input
+            type="text"
+            id="receiver-id"
+            name="receiver-id"
+            value=""
+            class="form-input"
+          />
+          <label for="receiver-id"></label>
+
+          <label for="amount" class="form-label">Amount</label>
+          <input type="number" id="amount" name="amount" class="form-input" />
+
+          <button type="submit" class="button">Transfer</button>
+        </form>
+        <p>
+          <a href="#" onclick="showViewOneCustomer()"
+            >Back to customer information</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div id="transactions-result" class="hidden">
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>SenderId</th>
+            <th>ReceiverId</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Populate the customer data dynamically using server-side code -->
+        </tbody>
+      </table>
+    </div>
+    <h2 id="error"></h2>
+  </body>
+</html>
