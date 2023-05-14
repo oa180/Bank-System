@@ -73,6 +73,7 @@ export class CRUD {
           senderId,
           receiverId,
           transferId,
+          status: true,
         },
       });
     } catch (err) {

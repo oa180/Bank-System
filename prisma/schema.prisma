@@ -37,6 +37,7 @@ model Transaction {
   transfer   Transfer @relation(fields: [transferId], references: [id])
   transferId String   @unique
 
+  status    Boolean   @default(false)
   createdAt DateTime @default(now())
 
   @@id([senderId, receiverId, transferId])
